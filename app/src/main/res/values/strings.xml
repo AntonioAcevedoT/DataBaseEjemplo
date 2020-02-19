@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataBaseExample</string>
+    <string name="hint_name">Escribe aqui un nombre</string>
+    <string name="hint_age">Escribe aqui tu edad</string>
+    <string name="borrar">Nombre a borrar</string>
+    <string name="buscar">Nombre a buscar</string>
+</resources>
