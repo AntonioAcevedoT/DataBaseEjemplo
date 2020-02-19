@@ -12,7 +12,6 @@
         android:id="@+id/edit_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentyTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
@@ -32,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_name" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonBorrar"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,16 +42,15 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonInsertar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonBuscar"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="Buscar"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonBorrar"
+        app:layout_constraintStart_toStartOf="@+id/buttonBorrar"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBorrar" />
 
     <EditText
         android:id="@+id/editTextBorrar"
@@ -64,25 +62,24 @@
         android:hint="@string/borrar"
         android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBorrar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBorrar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintTop_toTopOf="@+id/buttonBorrar" />
 
     <EditText
         android:id="@+id/editTextBuscar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
         android:ems="10"
         android:hint="@string/buscar"
         android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBuscar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBuscar"
         app:layout_constraintStart_toStartOf="@+id/editTextBorrar"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="@+id/buttonBuscar" />
+    " />
 
     <Button
         android:id="@+id/btn_seleccionar"

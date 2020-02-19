@@ -54,7 +54,7 @@ public class DataManager {
         //DELETE FROM NamesAndAddresses WHERE name = 'name';
         String query="DELETE FROM "+
                 TABLE_NAMES_AND_ADDRESS +
-                "WHERE "+ TABLE_ROW_NAME+
+                " WHERE "+ TABLE_ROW_NAME+
                 " = '"+name+"';";
         Log.i("delete() = ",query);
         db.execSQL(query);
@@ -90,14 +90,46 @@ public class DataManager {
 
         }
 
+        /*Solamente se ejecuta la primera vez que arranca la app y debe crearse
+        la base de datos
+         */
         @Override
         public void onCreate(SQLiteDatabase db) {
 
+            String newTablesQuery="CREATE TABLE "+
+                    TABLE_NAMES_AND_ADDRESS + " ("+
+                    TABLE_ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "+
+                    TABLE_ROW_NAME+" TEXT NOT NULL , "+
+                    TABLE_ROW_AGE+" TEXT NOT NULL); ";
+            Log.i("creating Database ",newTablesQuery);
+            db.execSQL(newTablesQuery);
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        //aqui no implentes nada hasta no tener mejoras de la base de datps
+            if(oldVersion<newVersion){
+                //aqui implementamos las mejoras desde oldversion+1 hasta newversion
+                for(int i= oldVersion+1;i<=newVersion;i++){
+                    Log.i("upgrading database","Estamos haciendo una actualizacion");
+                }
+            }
+        }
+        private  void updateToVersion(int versionToupdate){
+            switch (versionToupdate){
+                case 1:
+                    //crear una base de datos
+                    break;
+                case 2:
+                    //Insertar un campo en la tabla
+                    break;
+                case 3:
+                    //Destruir una tala que ya no se usa
+                    break;
+                    default:
+                        //aqui no deberia entrar nunca
+                        break;
+            }
         }
     }
 }
